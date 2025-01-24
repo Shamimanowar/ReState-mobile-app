@@ -37,7 +37,7 @@ const SettingsItem = ({
     <View className="flex flex-row items-center gap-3">
       <Image source={icon} className="size-7" />
       <Text
-        className={`font-rubik-medium text-lg text-black-300 font-bold ${textStyles}`}
+        className={`mt-1.5 font-rubik-medium text-lg text-black-300 ${textStyles}`}
       >
         {label}
       </Text>
