@@ -17,6 +17,7 @@ import { useAppwrite } from "@/lib/useAppwrite";
 import { getLatestProperties, getProperties } from "@/lib/appwrite";
 import { useEffect, useState } from "react";
 import NoResults from "@/components/NoResults";
+import { getGreeting } from "@/lib/helpers";
 
 export default function Index() {
   const handlePress = () => {
@@ -83,7 +84,7 @@ export default function Index() {
                 />
                 <View className="flex flex-col items-start justify-center ml-2">
                   <Text className="text-xs font-rubik text-black-100">
-                    Good Morning
+                    {getGreeting()}
                   </Text>
                   <Text className="text-base font-rubik-medium text-black-300">
                     {user?.name}
