@@ -116,10 +116,12 @@ export async function getProperties({
   filter,
   query,
   limit,
+  offset,
 }: {
   filter: string;
   query: string;
   limit?: number;
+  offset?: number;
 }) {
   try {
     const buildQuery = [Query.orderDesc("$createdAt")];
@@ -137,6 +139,7 @@ export async function getProperties({
       );
 
     if (limit) buildQuery.push(Query.limit(limit));
+    if (offset) buildQuery.push(Query.offset(offset));
 
     const result = await databases.listDocuments(
       config.databaseId!,
