@@ -252,11 +252,11 @@ const Property = () => {
               </Text>
 
               <FlatList
-                data={[1, 2, 3, 4]}
-                keyExtractor={(item) => item.toString()}
-                renderItem={(item) => (
+                data={property?.gallery}
+                keyExtractor={(item) => item.$id}
+                renderItem={({ item }) => (
                   <Image
-                    source={images.japan}
+                    source={{ uri: item.image }}
                     className="size-40 rounded-xl"
                     resizeMode="cover"
                   />

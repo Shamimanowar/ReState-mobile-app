@@ -54,7 +54,10 @@ export default function Index() {
         keyExtractor={(item) => `${item.toString() + Math.random().toString()}`}
         renderItem={({ item }) => (
           <View className="px-5">
-            <ExploreCard item={item} onPress={() => handleCardPress(item.id)} />
+            <ExploreCard
+              item={item}
+              onPress={() => handleCardPress(item.$id)}
+            />
           </View>
           // <Card item={item} onPress={() => handleCardPress(item.id)} />
         )}
