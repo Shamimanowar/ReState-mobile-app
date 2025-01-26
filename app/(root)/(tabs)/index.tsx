@@ -15,13 +15,16 @@ import { useGlobalContext } from "@/lib/global-provider";
 import { router, useLocalSearchParams } from "expo-router";
 import { useAppwrite } from "@/lib/useAppwrite";
 import { getLatestProperties, getProperties } from "@/lib/appwrite";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import NoResults from "@/components/NoResults";
 
 export default function Index() {
-  const handlePress = () => {};
+  const handlePress = () => {
+    router.push("/explore");
+  };
 
   const handleCardPress = (id: string) => router.push(`/properties/${id}`);
+  const [page, setPage] = useState<number>(1);
 
   const { user } = useGlobalContext();
 
@@ -60,7 +63,7 @@ export default function Index() {
         data={properties}
         keyExtractor={(item) => `${item.toString() + Math.random().toString()}`}
         renderItem={({ item }) => (
-          <Card item={item} onPress={() => handleCardPress(item.id)} />
+          <Card item={item} onPress={() => handleCardPress(item.$id)} />
         )}
         numColumns={2}
         contentContainerClassName="pb-32"
@@ -121,7 +124,7 @@ export default function Index() {
                   renderItem={({ item }) => (
                     <FeaturedCard
                       item={item}
-                      onPress={() => handleCardPress(item.id)}
+                      onPress={() => handleCardPress(item.$id)}
                     />
                   )}
                   horizontal
