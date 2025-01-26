@@ -9,7 +9,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import icons from "@/constants/icons";
 import Search from "@/components/Search";
-import { ExploreCard } from "@/components/Cards";
+import { Card, ExploreCard } from "@/components/Cards";
 import Filters from "@/components/Filters";
 
 import { router, useLocalSearchParams } from "expo-router";
@@ -53,11 +53,13 @@ export default function Index() {
         data={properties}
         keyExtractor={(item) => `${item.toString() + Math.random().toString()}`}
         renderItem={({ item }) => (
-          <View className="px-5">
-            <ExploreCard item={item} onPress={() => handleCardPress(item.id)} />
-          </View>
+          // <View className="px-5">
+          //   <ExploreCard item={item} onPress={() => handleCardPress(item.id)} />
+          // </View>
+          <Card item={item} onPress={() => handleCardPress(item.id)} />
         )}
-        numColumns={1}
+        numColumns={2}
+        columnWrapperClassName="flex gap-3 px-5"
         contentContainerClassName="pb-32"
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={
