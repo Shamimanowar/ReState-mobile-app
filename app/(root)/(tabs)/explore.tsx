@@ -53,13 +53,13 @@ export default function Index() {
         data={properties}
         keyExtractor={(item) => `${item.toString() + Math.random().toString()}`}
         renderItem={({ item }) => (
-          // <View className="px-5">
-          //   <ExploreCard item={item} onPress={() => handleCardPress(item.id)} />
-          // </View>
-          <Card item={item} onPress={() => handleCardPress(item.id)} />
+          <View className="px-5">
+            <ExploreCard item={item} onPress={() => handleCardPress(item.id)} />
+          </View>
+          // <Card item={item} onPress={() => handleCardPress(item.id)} />
         )}
-        numColumns={2}
-        columnWrapperClassName="flex gap-3 px-5"
+        numColumns={1}
+        // columnWrapperClassName="flex gap-3 px-5"
         contentContainerClassName="pb-32"
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={
