@@ -30,6 +30,9 @@ module.exports = {
         },
         danger: "#F75555",
       },
+      boxShadow: {
+        btn: "4px 8px 24px 0px #704F3840",
+      },
     },
   },
   plugins: [],
