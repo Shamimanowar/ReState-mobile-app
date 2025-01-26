@@ -163,3 +163,9 @@ export const gallery = [
     image: images.japan,
   },
 ];
+
+export const owner = {
+  phone: process.env.OWNER_PHONE || "+8801612898898",
+  email: process.env.OWNER_EMAIL || "example@gmail.com",
+  name: process.env.OWNER_NAME || "Amazing Developer",
+};
