@@ -33,7 +33,7 @@ const Comment = ({ item }: Props) => {
             tintColor={"#0061FF"}
           />
           <Text className="text-black-300 text-sm font-rubik-medium ml-2">
-            120
+            {((Math.random() * 4500) / 2).toString().split(".")[0]}
           </Text>
         </View>
         <Text className="text-black-100 text-sm font-rubik">

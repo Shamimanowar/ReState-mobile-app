@@ -164,7 +164,7 @@ const Property = () => {
             <Text className="text-xl font-rubik-bold mt-7">Agent</Text>
             <View className="flex flex-row gap-4 my-3">
               <Image
-                source={images.shamim}
+                source={{ uri: property?.agent.avatar }}
                 className="size-14 rounded-full border border-primary-200"
                 resizeMode="contain"
               />
