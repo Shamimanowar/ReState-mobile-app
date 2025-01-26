@@ -86,3 +86,36 @@ export const Card = ({ item, onPress }: Props) => {
     </TouchableOpacity>
   );
 };
+
+export const ExploreCard = ({ item, onPress }: Props) => {
+  return (
+    <TouchableOpacity
+      className="flex flex-row justify-start items-center w-full mt-4 px-3 py-6 rounded-lg bg-white shadow-xl shadow-black-200/90"
+      onPress={onPress}
+    >
+      <View className="relative">
+        <Image source={{ uri: item.image }} className="size-32 rounded-xl" />
+        <View className="flex flex-row absolute justify-center items-center top-2 right-2 bg-white/90 rounded-full px-2 py-0.5">
+          <Image source={icons.star} className="size-3.5" />
+          <Text className="text-xs ml-1">{item.rating}</Text>
+        </View>
+      </View>
+      <View className="flex flex-row items-center justify-between flex-1 h-24 px-3">
+        <View className="flex-1 flex flex-col justify-between h-full items-start pr-2">
+          <Text className="font-rubik-bold text-black-300 text-lg">
+            {item.name}
+          </Text>
+          <Text className="font-rubik-light text-sm text-black-200 pb-1">
+            {item.address}
+          </Text>
+        </View>
+        <View className="flex-1 flex flex-col justify-between h-full items-end">
+          <Image source={icons.heart} className="size-6" tintColor="#8C8E98" />
+          <Text className="font-rubik-bold text-lg text-primary-300">
+            ${item.price}
+          </Text>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
