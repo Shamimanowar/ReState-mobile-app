@@ -310,38 +310,7 @@ const Property = () => {
               </View>
 
               {/* Bottom Review */}
-              {/* <View className="flex flex-col gap-4 mt-10">
-                <View className="flex flex-row gap-4 items-center">
-                  <Image
-                    source={images.avatar}
-                    className="size-12 rounded-full"
-                  />
-                  <Text className="font-rubik-bold text-base text-black-300">
-                    Charolette Hanlin
-                  </Text>
-                </View>
 
-                <Text className="font-rubik text-base text-black-200 leading-7">
-                  The apartment is very clean and modern. I really like the
-                  interior design. Looks like I'll feel at home 😍
-                </Text>
-
-                <View className="flex flex-row justify-between">
-                  <View className="flex flex-row gap-3 items-center">
-                    <Image
-                      source={icons.heart}
-                      className="size-6"
-                      tintColor={"#0061FF"}
-                    />
-                    <Text className="text-base font-rubik-medium text-black-300">
-                      938
-                    </Text>
-                  </View>
-                  <Text className="text-base font-rubik text-black-100">
-                    6 days ago
-                  </Text>
-                </View>
-              </View> */}
               <View className="mt-5">
                 <Comment item={property?.reviews[0]} />
               </View>
