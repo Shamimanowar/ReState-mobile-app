@@ -17,6 +17,7 @@ import { useAppwrite } from "@/lib/useAppwrite";
 import { getProperties } from "@/lib/appwrite";
 import { useEffect } from "react";
 import NoResults from "@/components/NoResults";
+import FilterHeader from "@/components/FilterHeader";
 
 export default function Index() {
   const handlePress = () => {};
@@ -70,18 +71,11 @@ export default function Index() {
         }
         ListHeaderComponent={
           <View className="px-5">
-            <View className="flex flex-row justify-between items-center">
-              <TouchableOpacity
-                onPress={() => router.back()}
-                className="flex flex-row bg-primary-200 p-3 rounded-full"
-              >
-                <Image source={icons.backArrow} className="size-6" />
-              </TouchableOpacity>
-              <Text className="font-rubik-medium text-base mr-2 text-black-300">
-                Search for Your Ideal Home
-              </Text>
-              <Image source={icons.bell} className="size-6" />
-            </View>
+            <FilterHeader
+              leftIcon={icons.backArrow}
+              rightIcon={icons.bell}
+              label="Search for Your Ideal Home"
+            />
             <Search />
             <Filters />
             <Text className="text-lg font-rubik-bold mt-5 mb-3">
