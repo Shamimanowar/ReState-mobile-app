@@ -15,12 +15,14 @@ import Filters from "@/components/Filters";
 import { router, useLocalSearchParams } from "expo-router";
 import { useAppwrite } from "@/lib/useAppwrite";
 import { getProperties } from "@/lib/appwrite";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import NoResults from "@/components/NoResults";
 import FilterHeader from "@/components/FilterHeader";
+import PopupModal from "@/components/PopModal";
 
 export default function Index() {
   const handlePress = () => {};
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   const handleCardPress = (id: string) => router.push(`/properties/${id}`);
 
@@ -76,7 +78,7 @@ export default function Index() {
               rightIcon={icons.bell}
               label="Search for Your Ideal Home"
             />
-            <Search />
+            <Search onFilterPress={() => setModalOpen(!modalOpen)} modalOpen />
             <Filters />
             <Text className="text-lg font-rubik-bold mt-5 mb-3">
               Found {properties?.length} Apartments
@@ -84,6 +86,8 @@ export default function Index() {
           </View>
         }
       ></FlatList>
+
+      {modalOpen && <PopupModal closer={() => setModalOpen(false)} modalOpen />}
     </SafeAreaView>
   );
 }

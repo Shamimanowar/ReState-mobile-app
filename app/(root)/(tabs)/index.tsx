@@ -19,6 +19,8 @@ import { useEffect, useState } from "react";
 import NoResults from "@/components/NoResults";
 import { getGreeting } from "@/lib/helpers";
 
+import PopupModal from "@/components/PopModal";
+
 export default function Index() {
   const handlePress = () => {
     router.push("/explore");
@@ -26,6 +28,7 @@ export default function Index() {
 
   const handleCardPress = (id: string) => router.push(`/properties/${id}`);
   const [page, setPage] = useState<number>(1);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   const { user } = useGlobalContext();
 
@@ -59,7 +62,9 @@ export default function Index() {
   }, [params.filter, params.query]);
 
   return (
-    <SafeAreaView className="bg-white h-full">
+    <SafeAreaView
+      className={`h-full ${modalOpen ? "bg-[#DDDDDDAA]" : "bg-white"}`}
+    >
       <FlatList
         data={properties}
         keyExtractor={(item) => `${item.toString() + Math.random().toString()}`}
@@ -96,7 +101,11 @@ export default function Index() {
             {/* Heading close */}
 
             {/* Search bar start */}
-            <Search />
+            <Search
+              onFilterPress={() => setModalOpen(!modalOpen)}
+              modalOpen
+              extraStyle={modalOpen ? "bg-[#DDDDDDAA]" : ""}
+            />
 
             {/* Featured section */}
             <View className="my-5">
@@ -155,6 +164,8 @@ export default function Index() {
           </View>
         }
       ></FlatList>
+
+      {modalOpen && <PopupModal closer={() => setModalOpen(false)} modalOpen />}
     </SafeAreaView>
   );
 }
