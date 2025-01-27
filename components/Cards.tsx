@@ -102,10 +102,16 @@ export const ExploreCard = ({ item, onPress }: Props) => {
       </View>
       <View className="flex flex-row items-center justify-between flex-1 h-24 px-3">
         <View className="flex-1 flex flex-col justify-between h-full items-start pr-2">
-          <Text className="font-rubik-bold text-black-300 text-lg">
+          <Text
+            className="font-rubik-bold text-black-300 text-lg"
+            numberOfLines={2}
+          >
             {item.name}
           </Text>
-          <Text className="font-rubik-light text-sm text-black-200 pb-1">
+          <Text
+            className="font-rubik-light text-sm text-black-200 pb-1"
+            numberOfLines={2}
+          >
             {item.address}
           </Text>
         </View>
