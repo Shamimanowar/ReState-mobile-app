@@ -1,0 +1,16 @@
+Next Features
+
+1. Implement modal to show all reviews with an Image
+2. Image viewer for Gallery images
+3. Implement Map that accept location and return image like object
+4. Profile edit functions
+5. Refetch when someone scrolls at the bottom
+6. Implement My Booking page
+7. Remove Appwrite backend and add Django
+8. General Signup and Signin options with OAuth (Facebook, Google)
+
+More Advance Features -----------
+1. Enable Social Sharing
+2. Implement Reactions
+3. Add invitation
+4. Notification System with Socket
